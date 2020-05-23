@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
 import { State } from '../reducers';
@@ -22,3 +23,5 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<State, null, Action>): {
     dispatch(deleteTodo(id));
   }
 });
+
+export const connectedApp = connect(mapStateToProps)(App);
