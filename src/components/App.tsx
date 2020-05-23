@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<State, null, Action>): {
   }
 });
 
-export const connectedApp = connect(mapStateToProps)(App);
+export const connectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
