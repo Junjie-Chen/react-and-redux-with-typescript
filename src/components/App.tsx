@@ -1,7 +1,18 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
 import { State } from '../reducers';
+
+class App extends Component {
+  render(): JSX.Element {
+    return (
+      <div>
+        <button>Fetch</button>
+      </div>
+    );
+  }
+}
 
 const mapStateToProps = (state: State): State => ({
   loading: state.loading,
