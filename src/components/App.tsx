@@ -7,7 +7,11 @@ const mapStateToProps = (state: State): State => ({
   todos: state.todos
 });
 
-const mapDispatchToProps = (dispatch: ThunkDispatch<State, null, Action>) => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<State, null, Action>): {
+  loadingTodos(loading: boolean): void;
+  fetchTodos(): void;
+  deleteTodo(id: number): void;
+} => ({
   loadingTodos(loading: boolean): void {
     dispatch(loadingTodos(loading));
   },
