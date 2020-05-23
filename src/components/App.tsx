@@ -13,10 +13,15 @@ class App extends Component {
     }
   };
 
+  renderLoading(): JSX.Element {
+    return <div>Loading...</div>;
+  }
+
   render(): JSX.Element {
     return (
       <div>
         <button onClick={this.onButtonClick}>Fetch</button>
+        {this.props.loading.loadingTodos ? this.renderLoading()}
       </div>
     );
   }
