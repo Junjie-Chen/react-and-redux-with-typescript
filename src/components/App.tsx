@@ -5,6 +5,12 @@ import { Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
 import { State } from '../reducers';
 
 class App extends Component {
+  componentDidUpdate(prevProps): void {
+    if (!prevProps.todos.length && this.props.todos.length) {
+      this.props.loadingTodos(false);
+    }
+  }
+
   onButtonClick = (): void => {
     if (!this.props.todos.length) {
       this.props.fetchTodos();
