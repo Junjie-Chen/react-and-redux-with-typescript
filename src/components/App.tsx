@@ -8,6 +8,8 @@ class App extends Component {
   onButtonClick = (): void => {
     if (!this.props.todos.length) {
       this.props.fetchTodos();
+
+      this.props.loadingTodos(true);
     }
   };
 
