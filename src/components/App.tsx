@@ -1,4 +1,5 @@
-import { loadingTodos, fetchTodos, deleteTodo } from '../actions';
+import { ThunkDispatch } from 'redux-thunk';
+import { Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
 import { State } from '../reducers';
 
 const mapStateToProps = (state: State): State => ({
@@ -6,7 +7,7 @@ const mapStateToProps = (state: State): State => ({
   todos: state.todos
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: ThunkDispatch<State, null, Action>) => ({
   loadingTodos(loading: boolean): void {
     dispatch(loadingTodos(loading));
   },
