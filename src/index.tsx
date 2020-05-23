@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import { connectedApp as App } from './components/App';
 
 ReactDOM.render(
-  <App />,
+  <Provider>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
