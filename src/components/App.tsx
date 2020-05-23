@@ -5,10 +5,16 @@ import { Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
 import { State } from '../reducers';
 
 class App extends Component {
+  onButtonClick = (): void => {
+    if (!this.props.todos.length) {
+      this.props.fetchTodos();
+    }
+  };
+
   render(): JSX.Element {
     return (
       <div>
-        <button>Fetch</button>
+        <button onClick={this.onButtonClick}>Fetch</button>
       </div>
     );
   }
