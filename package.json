@@ -2,6 +2,9 @@
   "name": "react-and-redux-with-typescript",
   "version": "0.1.0",
   "private": true,
+  "dependencies": {
+    "react-scripts": "^3.4.1"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
