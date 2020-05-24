@@ -13,7 +13,7 @@ interface Props {
 }
 
 class App extends Component<Props> {
-  componentDidUpdate(prevProps): void {
+  componentDidUpdate(prevProps: Props): void {
     if (!prevProps.todos.length && this.props.todos.length) {
       this.props.loadingTodos(false);
     }
