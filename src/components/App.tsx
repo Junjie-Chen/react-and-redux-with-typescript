@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
 import { Todo, Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
-import { State } from '../reducers';
+import { Loading, State } from '../reducers';
+
+interface Props {
+  loading: Loading;
+  loadingTodos(loading: boolean): void;
+  todos: Todo[];
+  fetchTodos(): void;
+  deleteTodo(id: number): void;
+}
 
 class App extends Component {
   componentDidUpdate(prevProps): void {
