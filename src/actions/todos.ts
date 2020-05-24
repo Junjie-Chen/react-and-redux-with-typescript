@@ -22,7 +22,7 @@ export interface DeleteTodo {
 const todosResource = 'https://jsonplaceholder.typicode.com/todos';
 
 export const fetchTodos = (): ThunkAction<Promise<void>, State, null, FetchTodos> => async (dispatch: ThunkDispatch<State, null, FetchTodos>): Promise<void> => {
-  const response = await axios.get(todosResource);
+  const response = await axios.get<Todo[]>(todosResource);
 
   dispatch({
     type: Types.FetchTodos,
