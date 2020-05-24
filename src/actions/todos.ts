@@ -1,5 +1,7 @@
 import axios from 'axios';
+import { ThunkAction } from 'redux-thunk';
 import { Types } from '.';
+import { State } from '../reducers';
 
 export interface Todo {
   id: number;
@@ -19,7 +21,7 @@ export interface DeleteTodo {
 
 const todosResource = 'https://jsonplaceholder.typicode.com/todos';
 
-export const fetchTodos = () => async dispatch => {
+export const fetchTodos = (): ThunkAction<Promise<void>, State, null, FetchTodos> => async dispatch => {
   const response = await axios.get(todosResource);
 
   dispatch({
