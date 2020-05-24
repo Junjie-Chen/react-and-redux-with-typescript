@@ -19,13 +19,17 @@ class App extends Component {
     }
   };
 
+  onTodoClick = (id: number): void => {
+    this.props.deleteTodo(id);
+  };
+
   renderLoading(): JSX.Element {
     return <div>Loading...</div>;
   }
 
   renderTodos(): JSX.Element[] {
     return this.props.todos.map((todo: Todo): JSX.Element => {
-      return <div key={todo.id}>{todo.title}</div>;
+      return <div key={todo.id} onClick={() => { this.onTodoClick(todo.id) }}>{todo.title}</div>;
     });
   }
 
