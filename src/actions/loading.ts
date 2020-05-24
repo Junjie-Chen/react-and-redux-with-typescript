@@ -5,7 +5,7 @@ export interface LoadingTodos {
   payload: boolean;
 }
 
-export const loadingTodos = (loading: boolean) => ({
+export const loadingTodos = (loading: boolean): LoadingTodos => ({
   type: Types.LoadingTodos,
   payload: loading
 });
