@@ -30,7 +30,7 @@ export const fetchTodos = (): ThunkAction<Promise<void>, State, null, FetchTodos
   });
 };
 
-export const deleteTodo = (id: number) => ({
+export const deleteTodo = (id: number): DeleteTodo => ({
   type: Types.DeleteTodo,
   payload: id
 });
