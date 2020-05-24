@@ -15,3 +15,5 @@ export interface DeleteTodo {
   type: Types.DeleteTodo;
   payload: number;
 }
+
+const todosResource = 'https://jsonplaceholder.typicode.com/todos';
