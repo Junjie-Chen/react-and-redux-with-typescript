@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ThunkDispatch } from 'redux-thunk';
-import { Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
+import { Todo, Action, loadingTodos, fetchTodos, deleteTodo } from '../actions';
 import { State } from '../reducers';
 
 class App extends Component {
@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   renderTodos(): JSX.Element[] {
-    return this.props.todos.map(todo: JSX.Element => {
+    return this.props.todos.map((todo: Todo): JSX.Element => {
       return <div key={todo.id}>{todo.title}</div>;
     });
   }
