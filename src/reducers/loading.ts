@@ -1,4 +1,4 @@
-import { Types } from '../actions';
+import { Action, Types } from '../actions';
 
 export interface Loading {
   loadingTodos: boolean;
@@ -6,7 +6,7 @@ export interface Loading {
 
 const loadingState = { loadingTodos: false };
 
-export const loading = (state: Loading = loadingState, action) => {
+export const loading = (state: Loading = loadingState, action: Action) => {
   switch (action.type) {
     case Types.LoadingTodos:
       return { ...state, loadingTodos: action.payload };
