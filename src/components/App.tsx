@@ -23,11 +23,17 @@ class App extends Component {
     return <div>Loading...</div>;
   }
 
+  renderTodos(): JSX.Element[] {
+    return this.props.todos.map(todo: JSX.Element => {
+      return <div key={todo.id}>{todo.title}</div>;
+    });
+  }
+
   render(): JSX.Element {
     return (
       <div>
         <button onClick={this.onButtonClick}>Fetch</button>
-        {this.props.loading.loadingTodos ? this.renderLoading()}
+        {this.props.loading.loadingTodos ? this.renderLoading() : this.renderTodos()}
       </div>
     );
   }
