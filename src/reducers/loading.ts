@@ -6,7 +6,7 @@ export interface Loading {
 
 const loadingState = { loadingTodos: false };
 
-export const loading = (state = loadingState, action) => {
+export const loading = (state: Loading = loadingState, action) => {
   switch (action.type) {
     case Types.LoadingTodos:
       return { ...state, loadingTodos: action.payload };
