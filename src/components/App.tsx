@@ -12,7 +12,7 @@ interface Props {
   deleteTodo(id: number): void;
 }
 
-class App extends Component {
+class App extends Component<Props> {
   componentDidUpdate(prevProps): void {
     if (!prevProps.todos.length && this.props.todos.length) {
       this.props.loadingTodos(false);
