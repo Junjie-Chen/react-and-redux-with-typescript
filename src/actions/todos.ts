@@ -10,3 +10,8 @@ export interface FetchTodos {
   type: Types.FetchTodos;
   payload: Todo[];
 }
+
+export interface DeleteTodo {
+  type: Types.DeleteTodo;
+  payload: number;
+}
