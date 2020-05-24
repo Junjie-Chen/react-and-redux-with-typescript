@@ -29,3 +29,8 @@ export const fetchTodos = (): ThunkAction<Promise<void>, State, null, FetchTodos
     payload: response.data
   });
 };
+
+export const deleteTodo = (id: number) => ({
+  type: Types.DeleteTodo,
+  payload: id
+});
