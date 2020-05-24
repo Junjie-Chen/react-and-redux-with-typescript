@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { Types } from '.';
 
 export interface Todo {
@@ -17,3 +18,12 @@ export interface DeleteTodo {
 }
 
 const todosResource = 'https://jsonplaceholder.typicode.com/todos';
+
+export const fetchTodos = () => async dispatch => {
+  const response = await axios.get(todosResource);
+
+  dispatch({
+    type: Types.FetchTodos,
+    payload: response.data
+  });
+};
