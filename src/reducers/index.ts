@@ -10,7 +10,7 @@ export interface State {
   todos: Todo[];
 }
 
-export const reducers = combineReducers({
+export const reducers = combineReducers<State>({
   loading,
   todos
 });
