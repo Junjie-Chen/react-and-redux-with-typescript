@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { ThunkAction } from 'redux-thunk';
+import { ThunkAction, ThunkDispatch } from 'redux-thunk';
 import { Types } from '.';
 import { State } from '../reducers';
 
@@ -21,7 +21,7 @@ export interface DeleteTodo {
 
 const todosResource = 'https://jsonplaceholder.typicode.com/todos';
 
-export const fetchTodos = (): ThunkAction<Promise<void>, State, null, FetchTodos> => async dispatch => {
+export const fetchTodos = (): ThunkAction<Promise<void>, State, null, FetchTodos> => async (dispatch: ThunkDispatch<State, null, FetchTodos>) => {
   const response = await axios.get(todosResource);
 
   dispatch({
